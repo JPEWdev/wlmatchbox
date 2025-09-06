@@ -1,0 +1,12 @@
+wlmatchbox = executable('wlmatchbox',
+  'keyboard.c',
+  'main.c',
+  'output.c',
+  'popup.c',
+  'server.c',
+  'toplevel.c',
+  protocols_code['xdg-shell'],
+  protocols_server_header['xdg-shell'],
+  dependencies: [wlroots, wl_server, xkbcommon],
+  install: true,
+)
