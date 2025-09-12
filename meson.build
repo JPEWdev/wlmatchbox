@@ -27,8 +27,10 @@ config_h = configure_file(
   configuration: conf_data
 )
 config_inc = include_directories('.')
+includes = include_directories('include')
 
 subdir('protocols')
+subdir('src/libwlmatchapp')
 subdir('src/wlmatchbox')
 subdir('src/xdg-app-chooser')
 subdir('src/app-panel')

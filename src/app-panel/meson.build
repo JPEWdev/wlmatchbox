@@ -11,5 +11,9 @@ wlmatchbox_app_panel = executable('wlmatchbox-app-panel',
     wl_cursor,
   ],
   install: true,
+  link_with: [
+    libwlmatchapp,
+  ],
+  include_directories: [includes]
 )
 

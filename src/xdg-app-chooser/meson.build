@@ -10,4 +10,8 @@ xdg_app_chooser = executable('xdg-app-chooser',
     wl_cursor,
   ],
   install: true,
+  link_with: [
+    libwlmatchapp,
+  ],
+  include_directories: [includes]
 )
