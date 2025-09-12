@@ -1,6 +1,6 @@
 project('wlmatchbox', 'c')
 
-wlroots = dependency('wlroots-0.19')
+wlroots = dependency('wlroots-0.19', fallback: ['wlroots', 'wlroots'])
 wl_server = dependency('wayland-server')
 wl_client = dependency('wayland-client')
 wl_scanner = dependency('wayland-scanner')
