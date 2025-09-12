@@ -24,6 +24,8 @@
 #include "popup.h"
 #include "toplevel.h"
 
+#include "config.h"
+
 DEFINE_TYPE(server)
 
 static void new_output_notify(struct wl_listener *listener, void *data) {
@@ -167,8 +169,10 @@ static void server_cursor_frame(struct wl_listener *listener, void *data) {
 }
 
 // XWayland
+#ifdef ENABLE_XWAYLAND
 static void new_xwayland_surface_notify(struct wl_listener *listener,
                                         void *data) {}
+#endif
 
 // XDG Handling
 static void server_new_xdg_toplevel(struct wl_listener *listener, void *data) {
@@ -356,10 +360,12 @@ struct server *server_create(void) {
   wl_signal_add(&server->wlr_backend->events.new_input, &server->new_input);
 
   // XWayland
+#ifdef ENABLE_XWAYLAND
   server->xwayland =
       wlr_xwayland_create(server->wl_display, server->wlr_compositor, true);
   bind_clbk(&server->new_xwayland_surface,
             &server->xwayland->events.new_surface, new_xwayland_surface_notify);
+#endif
 
   // XDG shell
   server->xdg_shell = wlr_xdg_shell_create(server->wl_display, 3);

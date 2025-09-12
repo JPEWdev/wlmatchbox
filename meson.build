@@ -16,6 +16,14 @@ libm_dep = cc.find_library('m')
 
 add_project_arguments('-DWLR_USE_UNSTABLE=1', language: 'c')
 
+conf_data = configuration_data()
+conf_data.set('ENABLE_XWAYLAND', get_option('xwayland'))
+configure_file(
+  input: 'config.h.in',
+  output: 'config.h',
+  configuration: conf_data
+)
+
 subdir('protocols')
 subdir('src/wlmatchbox')
 subdir('src/xdg-app-chooser')
