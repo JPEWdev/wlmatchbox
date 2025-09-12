@@ -1,4 +1,7 @@
-project('wlmatchbox', 'c')
+project('wlmatchbox', 'c',
+  version: '0.0.1',
+  meson_version: '>=1.1',
+)
 
 wlroots = dependency('wlroots-0.19', fallback: ['wlroots', 'wlroots'])
 wl_server = dependency('wayland-server')
@@ -18,11 +21,12 @@ add_project_arguments('-DWLR_USE_UNSTABLE=1', language: 'c')
 
 conf_data = configuration_data()
 conf_data.set('ENABLE_XWAYLAND', get_option('xwayland'))
-configure_file(
+config_h = configure_file(
   input: 'config.h.in',
   output: 'config.h',
   configuration: conf_data
 )
+config_inc = include_directories('.')
 
 subdir('protocols')
 subdir('src/wlmatchbox')

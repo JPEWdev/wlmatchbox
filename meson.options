@@ -1,2 +1,2 @@
-option('xwayland', type: 'boolean', value: false
+option('xwayland', type: 'boolean', value: false,
     description: 'Enable XWayland support')
