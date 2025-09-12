@@ -3,10 +3,11 @@ xdg_app_chooser = executable('xdg-app-chooser',
   protocols_code['xdg-shell'],
   protocols_client_header['xdg-shell'],
   dependencies: [
-    wl_client,
-    wl_cursor,
     cairo,
     gio_2_0,
+    libm_dep,
+    wl_client,
+    wl_cursor,
   ],
   install: true,
 )

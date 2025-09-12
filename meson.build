@@ -11,6 +11,9 @@ gio_2_0 = dependency('gio-2.0')
 xkbcommon = dependency('xkbcommon')
 wayland_scanner = wl_scanner.get_variable('wayland_scanner')
 
+cc = meson.get_compiler('c')
+libm_dep = cc.find_library('m')
+
 add_project_arguments('-DWLR_USE_UNSTABLE=1', language: 'c')
 
 subdir('protocols')

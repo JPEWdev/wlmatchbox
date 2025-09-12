@@ -10,6 +10,7 @@
 #include <gio/gio.h>
 #include <glob.h>
 #include <linux/input.h>
+#include <math.h>
 #include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
