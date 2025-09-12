@@ -11,12 +11,17 @@ meson setup builddir
 ninja -C builddir
 ```
 
-As a convinence, a `run` target is provided that will run the compositor with
+As a convenience, a `run` target is provided that will run the compositor with
 the app chooser and panel. To launch it, run:
 
 ```shell
 ninja -C builddir run
 ```
+
+*NOTE:* When running this way under another compositor (e.g. Gnome or KDE),
+some applications may not correctly launch under the nested compositor and will
+instead launch in the parent. Applications that launch this way will not appear
+in the app panel.
 
 ## Components
 
