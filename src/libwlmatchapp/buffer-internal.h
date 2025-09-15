@@ -6,6 +6,7 @@
 #ifndef _BUFFER_INTERNAL_H
 #define _BUFFER_INTERNAL_H
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <wayland-client-core.h>
 

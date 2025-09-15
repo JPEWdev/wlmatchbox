@@ -6,6 +6,8 @@
 #ifndef _WLMATCHAPP_DISPLAY
 #define _WLMATCHAPP_DISPLAY
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <wayland-client-core.h>
 #include <wlmatchapp/symbols.h>
 

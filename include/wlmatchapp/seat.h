@@ -6,6 +6,8 @@
 #ifndef _WLMATCHAPP_SEAT
 #define _WLMATCHAPP_SEAT
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <wayland-client-core.h>
 #include <wlmatchapp/symbols.h>
 

@@ -7,6 +7,7 @@
 #define _WLMATCHAPP_WINDOW_H
 
 #include <cairo.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <wayland-client-core.h>
 #include <wlmatchapp/symbols.h>

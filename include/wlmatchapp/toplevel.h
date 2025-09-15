@@ -6,6 +6,8 @@
 #ifndef _WLMATCHAPP_TOPLEVEL
 #define _WLMATCHAPP_TOPLEVEL
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <wlmatchapp/symbols.h>
 #include <wlmatchapp/window.h>
 
