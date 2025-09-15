@@ -3,6 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
+#include "config.h"
+
 #include "server.h"
 
 #include <sys/socket.h>
@@ -17,14 +19,14 @@
 #include <wlr/types/wlr_xcursor_manager.h>
 #include <wlr/types/wlr_xdg_shell.h>
 #include <wlr/util/log.h>
+#ifdef ENABLE_XWAYLAND
 #include <wlr/xwayland.h>
+#endif
 
 #include "keyboard.h"
 #include "output.h"
 #include "popup.h"
 #include "toplevel.h"
-
-#include "config.h"
 
 DEFINE_TYPE(server)
 
@@ -184,8 +186,7 @@ static void server_new_xdg_toplevel(struct wl_listener *listener, void *data) {
 }
 
 static void server_new_xdg_popup(struct wl_listener *listener, void *data) {
-  struct server *server =
-      get_type_ptr(server, listener, server, new_xdg_popup);
+  struct server *server = get_type_ptr(server, listener, server, new_xdg_popup);
   struct wlr_xdg_popup *xdg_popup = data;
 
   popup_create(server, xdg_popup);
